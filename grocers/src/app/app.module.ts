@@ -13,6 +13,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UnlockUsersComponent } from './employee/unlock-users/unlock-users.component';
+import { EditEmployeeProfileComponent } from './employee/edit-employee-profile/edit-employee-profile.component';
+import { PendingOrdersComponent } from './employee/update-order-status/pending-orders/pending-orders.component';
+import { ShippedOrdersComponent } from './employee/update-order-status/shipped-orders/shipped-orders.component';
+import { DeliveredOrdersComponent } from './employee/update-order-status/delivered-orders/delivered-orders.component';
+import { CancelledOrdersComponent } from './employee/update-order-status/cancelled-orders/cancelled-orders.component';
+import { OutForDeliveryOrdersComponent } from './employee/update-order-status/out-for-delivery-orders/out-for-delivery-orders.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +30,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DeleteproductComponent,
     ViewrequestComponent,
     NotFoundComponent,
-    UpdateproductComponent
+    UpdateproductComponent,
+    UnlockUsersComponent,
+    EditEmployeeProfileComponent,
+    PendingOrdersComponent,
+    ShippedOrdersComponent,
+    DeliveredOrdersComponent,
+    CancelledOrdersComponent,
+    OutForDeliveryOrdersComponent,
   ],
   imports: [
     BrowserModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule, BrowserAnimationsModule,
