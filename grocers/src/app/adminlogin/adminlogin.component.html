@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+
+</head>
+
+<body>
+
+
+  <h2>Admin Login</h2>
+
+
+  <form action="" method="post" [formGroup]="adminloginRef" (ngSubmit)="checkAdmin()" class="form-group">
+
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input class="col col-form-label" type="text" placeholder="Enter Username" name="uname"
+        formControlName="username" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input class="col col-form-label" type="password" placeholder="Enter Password" name="psw"
+        formControlName="password" required> <br><br>
+
+        <div class="text-center">
+
+            <button  class="btn btn-primary " type="submit">Login</button>
+        </div>
+
+    
+
+
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+
+        
+      </label>
+      <br><br>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" class="cancelbtn btn btn-danger">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+
+
+  <div>
+    {{msg}}
+  </div>
+
+</body>
+
+</html>
