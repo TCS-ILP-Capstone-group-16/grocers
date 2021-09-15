@@ -42,6 +42,13 @@ import { OutForDeliveryOrdersComponent } from './update-order-status/out-for-del
     ViewrequestComponent,
     NotFoundComponent,
     UpdateproductComponent,
+    UnlockUsersComponent,
+    EditEmployeeProfileComponent,
+    PendingOrdersComponent,
+    ShippedOrdersComponent,
+    DeliveredOrdersComponent,
+    CancelledOrdersComponent,
+    OutForDeliveryOrdersComponent
 
   ],
   imports: [
@@ -50,13 +57,8 @@ import { OutForDeliveryOrdersComponent } from './update-order-status/out-for-del
     ReactiveFormsModule, 
     HttpClientModule, 
     BrowserAnimationsModule,
-    UnlockUsersComponent,
-    EditEmployeeProfileComponent,
-    PendingOrdersComponent,
-    ShippedOrdersComponent,
-    DeliveredOrdersComponent,
-    CancelledOrdersComponent,
-    OutForDeliveryOrdersComponent
+    FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
