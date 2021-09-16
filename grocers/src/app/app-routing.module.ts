@@ -13,16 +13,13 @@ import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { DeleteEmployeeComponent } from './delete-employee/delete-employee.component';
 import { GenerateReportsComponent } from './generate-reports/generate-reports.component';
 
-const routes: Routes= [
-  { path: '', component: UserSignInComponent},
-  { path: 'signup', component: UserSignUpComponent},
+const routes: Routes = [
+  { path: '', component: UserSignInComponent },
+  { path: 'signup', component: UserSignUpComponent },
   { path: "adminlogin", component: AdminloginComponent },
   //{ path: "", redirectTo: "adminlogin", pathMatch: "prefix" },
-<<<<<<< HEAD
 
-=======
-  //{ path: "**", component: NotFoundComponent },
->>>>>>> beb40dbed684ec679b9b533d68fdbbbf68b5eafa
+
   {
     path: "adminhome/:uname", component: AdminhomeComponent,
 
@@ -38,6 +35,7 @@ const routes: Routes= [
 
 
   },
+
   { path: "**", component: NotFoundComponent },
 ];
 

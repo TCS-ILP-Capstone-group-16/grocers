@@ -1,6 +1,9 @@
 // load the model file  ie user-defined module like a import in ts file 
 let productModel = require("../model/product.model");
 
+
+
+//---------Admin
 let getAllProductDetails = (request, response) => {
 
     productModel.find({}, (err, data) => {
@@ -46,5 +49,14 @@ let updateProductDetails = (request, response) => {
         }
     })
 }
+//---------------------------------------------------------------------------Admin
+
+
+
+
+
+
+
+
 
 module.exports = { getAllProductDetails, addProductInfo, deleteProductInfo, updateProductDetails }
