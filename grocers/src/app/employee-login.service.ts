@@ -12,11 +12,11 @@ export class LoginService {
 
   // validated the employee account
   employeeLoginValidation(loginInfo: EmployeeLogin): Observable<any> {
-    return this.http.post("http://localhost:8080/api/employee/checkLogin", loginInfo, { responseType: "text" });
+    return this.http.post("http://localhost:9090/api/employee/checkLogin", loginInfo, { responseType: "text" });
   }
 
   // change the default password
   employeeNewPassword(employeeInfo: EmployeeLogin): Observable<any> {
-    return this.http.post("http://localhost:8080/api/employee/changePassword", employeeInfo, { responseType: "text" });
+    return this.http.post("http://localhost:9090/api/employee/changePassword", employeeInfo, { responseType: "text" });
   }
 }
