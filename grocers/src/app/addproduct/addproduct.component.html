@@ -1,1 +1,46 @@
-<p>addproduct works!</p>
+<div>
+    <h2>Add Product</h2>
+
+    <form action="/admin/add-product" [formGroup]="addProductRef" (ngSubmit)="addProduct()" method="POST">
+        <div class="form-group  ">
+            <label for="productLine">Product Name</label>
+            <input class="form-control forminput" id="title" formControlName="productName" />
+        </div>
+
+        <div class="form-group  ">
+            <label for="productLine">Product Line</label>
+            <input class="form-control forminput" id="productLine" formControlName="productLine" />
+        </div>
+
+        <div class="form-group  ">
+            <label for="productDescription">Product Description</label>
+            <input class="form-control forminput" formControlName="productDescription">
+        </div>
+        <div class="form-group">
+            <label for="productImage">Product Image</label>
+            <input class="form-control forminput" id="productImage" formControlName="productImage" />
+        </div>
+
+        <div class="form-group">
+            <label for="quantityInStock">Quantity In Stock </label>
+            <input class="form-control forminput" formControlName="quantityInStock" />
+        </div>
+
+        <div class="form-group">
+            <label for="price">Price </label>
+            <input class="form-control forminput" formControlName="price" id="price" />
+        </div>
+
+        <div class="form-group">
+            <label for="productVendor">Product Vendor </label>
+            <input class="form-control forminput" formControlName="productVendor" id="productVendor" />
+        </div>
+
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary ">Submit</button>
+        </div>
+
+    </form>
+
+</div>
