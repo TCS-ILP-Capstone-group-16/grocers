@@ -1,1 +1,8 @@
-<p>delete-employee works!</p>
+<div>
+    <form [formGroup]="formRef" (ngSubmit)="submit()">
+        <label>Emp ID</label>
+        <input type="text" formControlName="id" id="EID"><br/>
+        <div>{{msg}}</div>
+        <button type="submit">Delete Employee</button>
+    </form>
+</div>

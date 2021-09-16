@@ -9,13 +9,20 @@ import { DeleteproductComponent } from './deleteproduct/deleteproduct.component'
 import { UpdateproductComponent } from './updateproduct/updateproduct.component';
 import { ViewrequestComponent } from './viewrequest/viewrequest.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { AddEmployeeComponent } from './add-employee/add-employee.component';
+import { DeleteEmployeeComponent } from './delete-employee/delete-employee.component';
+import { GenerateReportsComponent } from './generate-reports/generate-reports.component';
 
 const routes: Routes= [
   { path: '', component: UserSignInComponent},
   { path: 'signup', component: UserSignUpComponent},
   { path: "adminlogin", component: AdminloginComponent },
   //{ path: "", redirectTo: "adminlogin", pathMatch: "prefix" },
+<<<<<<< HEAD
 
+=======
+  //{ path: "**", component: NotFoundComponent },
+>>>>>>> beb40dbed684ec679b9b533d68fdbbbf68b5eafa
   {
     path: "adminhome/:uname", component: AdminhomeComponent,
 
@@ -23,7 +30,10 @@ const routes: Routes= [
       { path: "addproduct", component: AddproductComponent },
       { path: "deleteproduct", component: DeleteproductComponent },
       { path: "updateproduct", component: UpdateproductComponent },
-      { path: "viewrequest", component: ViewrequestComponent }
+      { path: "viewrequest", component: ViewrequestComponent },
+      { path: "addemployee", component: AddEmployeeComponent },
+      { path: "deleteemployee", component: DeleteEmployeeComponent },
+      { path: "generatereports", component: GenerateReportsComponent }
     ]
 
 

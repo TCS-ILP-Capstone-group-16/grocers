@@ -18,6 +18,15 @@ export class EmployeeService {
 
   constructor(public http:HttpClient) { }
 
+
+  addEmployee(signup: Employee): Observable<any> {
+    return this.http.post("http://localhost:9090/api/admin/addEmp", signup,{responseType:'text'});
+  }
+
+  deleteEmployee(remove: Employee): Observable<any> {
+    return this.http.post("http://localhost:9090/api/admin/delEmp", remove,{responseType:'text'});
+  }
+
   sendCredentials(employee:any):Observable<ServerResponse>{
     let URL:string
     if(this.config['deployed']){
