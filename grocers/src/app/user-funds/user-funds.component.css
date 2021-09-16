@@ -1,0 +1,71 @@
+h2 {
+  margin-top: 2em;
+  text-align: center;
+  padding-top: 1em;
+}
+
+p {
+  text-align: center;
+  font-size: 1.4em;
+
+  background-image: linear-gradient(
+    180deg,
+    rgb(158, 245, 255),
+    rgb(189, 190, 255)
+  );
+  width: 40%;
+  margin: auto;
+  margin-top: 1.5em;
+  padding: 0.5em;
+  color: white;
+  border-radius: 25% 10%;
+}
+
+.add_fund_section {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2em;
+
+  background-image: -moz-linear-gradient(
+    180deg,
+    rgb(194, 255, 230),
+    rgb(199, 233, 255)
+  );
+
+  background-image: -webkit-linear-gradient(
+    180deg,
+    rgb(194, 255, 230),
+    rgb(199, 233, 255)
+  );
+
+  background-image: linear-gradient(
+    180deg,
+    rgb(194, 255, 230),
+    rgb(199, 233, 255)
+  );
+}
+
+.message {
+  background: blanchedalmond;
+  padding: 1em 1em;
+  width: 90%;
+  margin: auto;
+  margin-top: 2em;
+}
+
+input[type="submit"] {
+  font-size: 1.3em;
+}
+
+input {
+  height: 3em;
+}
+
+label {
+  font-size: 1.3em;
+}
+
+form {
+  padding: 2em;
+}
