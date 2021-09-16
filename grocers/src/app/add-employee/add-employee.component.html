@@ -1,0 +1,16 @@
+<div>
+    <form [formGroup]="formRef" (ngSubmit)="submit()">
+        <label>First Name</label>
+        <input type="text" formControlName="fname" id="first"><br/>
+        <label>Last Name </label>
+        <input type="text" formControlName="lname" id="last"><br/>
+        <label>Email</label>
+        <input type="text" formControlName="email" id="mail"><br/>
+        <label>Password </label>
+        <input type="password" formControlName="password" value="welcome123" id="pass"><br/>
+        <label>Emp ID</label>
+        <input type="text" formControlName="id" id="EID"><br/>
+        <div>{{msg}}</div>
+        <button type="submit">Add Employee</button>
+    </form>
+</div>
