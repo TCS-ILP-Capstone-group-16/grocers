@@ -4,12 +4,14 @@ mongoose.pluralize(null);
 
 let orderSchema = mongoose.Schema({
     orderNumber: Number,
+    productCode: Number,
     productName: String,
     quantityOrdered: Number,
     priceEach: Number,
     productImage: String,
     Status: String,
     UserID: Number,
+
 });
 
 let orderModel = mongoose.model("Order_details", orderSchema);

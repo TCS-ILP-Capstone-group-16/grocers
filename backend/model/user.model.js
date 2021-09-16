@@ -4,6 +4,8 @@ mongoose.pluralize(null);
 
 let userSchema = mongoose.Schema({
     userID: Number,
+    firstName:String,
+    lastName:String,
     Username: String,
     Email: String,
     Password: String,
@@ -11,6 +13,7 @@ let userSchema = mongoose.Schema({
     PhoneNumber: Number,
     BankAccount: Number,
     BankBalance: Number,
+
 });
 
 let userModel = mongoose.model("User", userSchema);
