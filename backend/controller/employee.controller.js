@@ -33,6 +33,10 @@ let changePW = (req, res) => {
             // find the employee that match to its employee id in database
             let singleEmployee = data.find( employeeData => employeeData.empID == employee.empID);
 
+            if(singleEmployee == undefined) {
+                res.send("Employee ID is incorrect");
+            }
+
             employeeModel.updateOne({ _id: singleEmployee._id},{$set:{Password: employee.password}},(err,result)=> {
                 if(!err){   
                      res.send("Registered Done");

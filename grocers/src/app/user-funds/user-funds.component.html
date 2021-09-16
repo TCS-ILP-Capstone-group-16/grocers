@@ -1,20 +1,36 @@
-<div>
+<div class="add_fund_section shadow-lg">
   <h2>Bank Account Balance</h2>
-  <p>Balance: {{ availableBalance }}</p>
+  <p>Balance: ${{ availableBalance }}</p>
   <div class="message">
     {{ result }}
   </div>
   <br />
   <form [formGroup]="accountRef" (ngSubmit)="refillAccount()">
-    <label>Account Number</label>
-    <input type="number" formControlName="accountNum" /><br />
-    <label>Recharge </label>
+    <div class="form-group">
+      <label>Account Number</label>
+      <input
+        type="number"
+        class="form-control"
+        formControlName="accountNum"
+      /><br />
+    </div>
+
+    <div class="form-group">
+      <label>Recharge </label>
+      <input
+        type="number"
+        class="form-control"
+        formControlName="refillAmount"
+        min="0"
+        max="9999"
+      /><br />
+    </div>
+
     <input
-      type="number"
-      formControlName="refillAmount"
-      min="0"
-      max="9999"
-    /><br />
-    <input type="submit" value="Refill" [disabled]="!accountRef.valid" />
+      type="submit"
+      class="btn-block btn btn-success"
+      value="Refill"
+      [disabled]="!accountRef.valid"
+    />
   </form>
 </div>

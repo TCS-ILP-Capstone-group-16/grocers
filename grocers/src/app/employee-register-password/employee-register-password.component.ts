@@ -40,7 +40,8 @@ export class EmployeeRegisterPasswordComponent implements OnInit {
     }, error => {
       console.log(error);
     });
-
+    
     this.employeeLoginRef.reset();
   }
+
 }
