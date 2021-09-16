@@ -4,9 +4,9 @@ let bodyParser = require('body-parser');
 let mongoose = require("mongoose");
 let cors = require("cors");
 
-let userInfo = require("./view/user.router");
-let orderInfo = require("./view/orderDetails.router");
-let employeeInfo = require("./view/employee.router");
+let userInfo = require("./router/user.router");
+let orderInfo = require("./router/orderDetails.router");
+let employeeInfo = require("./router/employee.router");
 
 // create reference of express
 let app = express();
