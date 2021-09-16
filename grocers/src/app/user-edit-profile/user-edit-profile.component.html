@@ -1,0 +1,31 @@
+<div>
+  <h2>Edit Profile</h2>
+  <div class="message">
+    {{ result }}
+  </div>
+  <br />
+  <form [formGroup]="userProfileRef" (ngSubmit)="updateProfile()">
+    <label>Email Address</label>
+    <input
+      type="email"
+      pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
+      formControlName="email"
+      value="{{ email }}"
+    /><br />
+
+    <label>Password</label>
+    <input type="password" formControlName="password" value="{{ pw }}" /><br />
+
+    <label>Address</label>
+    <input type="text" formControlName="address" value="{{ address }}" /><br />
+
+    <label>Phone Number</label>
+    <input
+      type="number"
+      formControlName="phoneNum"
+      value="{{ phoneNum }}"
+    /><br />
+
+    <input type="submit" value="Update Profile" />
+  </form>
+</div>

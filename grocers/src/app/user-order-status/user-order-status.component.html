@@ -1,0 +1,16 @@
+<div class="card" style="width: 18rem" *ngFor="let item of orders">
+  <img src="{{ item.productImage }}" class="card-img-top" />
+  <div class="card-body">
+    <h5 class="card-title">Order# {{ item.orderNumber }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{ item.productName }}</h6>
+    <p class="card-text">
+      <small class="text-muted">Quality: {{ item.quantityOrdered }}</small>
+    </p>
+    <button type="button" class="btn btn-primary">
+      Status: {{ item.Status }}
+    </button>
+    <button type="button" class="btn btn-success">
+      Cost: ${{ item.priceEach * item.quantityOrdered }}
+    </button>
+  </div>
+</div>

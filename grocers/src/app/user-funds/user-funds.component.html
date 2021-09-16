@@ -1,0 +1,20 @@
+<div>
+  <h2>Bank Account Balance</h2>
+  <p>Balance: {{ availableBalance }}</p>
+  <div class="message">
+    {{ result }}
+  </div>
+  <br />
+  <form [formGroup]="accountRef" (ngSubmit)="refillAccount()">
+    <label>Account Number</label>
+    <input type="number" formControlName="accountNum" /><br />
+    <label>Recharge </label>
+    <input
+      type="number"
+      formControlName="refillAmount"
+      min="0"
+      max="9999"
+    /><br />
+    <input type="submit" value="Refill" [disabled]="!accountRef.valid" />
+  </form>
+</div>

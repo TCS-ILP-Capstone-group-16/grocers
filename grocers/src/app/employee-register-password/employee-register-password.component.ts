@@ -4,18 +4,18 @@ import { Router } from '@angular/router';
 import { LoginService } from '../employee-login.service';
 
 @Component({
-  selector: 'app-employee-sign-in',
-  templateUrl: './employee-sign-in.component.html',
-  styleUrls: ['./employee-sign-in.component.css']
+  selector: 'app-employee-register-password',
+  templateUrl: './employee-register-password.component.html',
+  styleUrls: ['./employee-register-password.component.css']
 })
-export class EmployeeSignInComponent implements OnInit {
+export class EmployeeRegisterPasswordComponent implements OnInit {
 
   employeeLoginRef = new FormGroup({
     empID: new FormControl("", [Validators.required]),
     password: new FormControl("", [Validators.required]),
   });
 
-  result? : string;
+  result?: string = "Please Change Your Default Password Before You Login";
 
   constructor(
     public loginSer: LoginService,
@@ -29,15 +29,11 @@ export class EmployeeSignInComponent implements OnInit {
   checkEmployee() {
     let loginData = this.employeeLoginRef.value;
 
-    this.loginSer.employeeLoginValidation(loginData).subscribe(message => {
-      if (message == "Suceess") {
+    this.loginSer.employeeNewPassword(loginData).subscribe(message => {
+      if (message == "Registered Done") {
 
         // go to the main page of user 
-        console.log("good")
         this.router.navigate(["PATH_NAME_OF_DASHBAORD_HERE"]);
-      }
-      if (message == "Default Password") {
-        this.router.navigate(["employeeRegisterPW"]);
       } else {
         this.result = message;
       }
