@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ProductService } from '../product.service';
+import { AdminproductService } from '../adminproduct.service';
 
 @Component({
   selector: 'app-addproduct',
@@ -16,14 +16,14 @@ export class AddproductComponent implements OnInit {
     productImage: new FormControl(),
     quantityInStock: new FormControl(),
     price: new FormControl(),
-    ProductVendor: new FormControl(),
+    productVendor: new FormControl(),
 
 
   })
 
 
 
-  constructor(public productSer: ProductService) { }
+  constructor(public adminproductSer: AdminproductService) { }
 
   msg?: string;
   ngOnInit(): void {
@@ -31,7 +31,7 @@ export class AddproductComponent implements OnInit {
 
   addProduct() {
     let addprod = this.addProductRef.value;
-    this.productSer.adminAddProduct(addprod).
+    this.adminproductSer.adminAddProduct(addprod).
       subscribe(result => this.msg = result, error => console.log(error));
     this.addProductRef.reset();
   }

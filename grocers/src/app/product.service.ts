@@ -1,31 +1,45 @@
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import { Product } from './product';
-import { Observable } from 'rxjs';
+import { from, Observable, Observer } from 'rxjs';
+import { ServerResponse } from './model.serverResponse'
+import { Product } from './model.product'
+import { User } from './model.user'
+import { Ticket } from './model.ticket'
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class ProductService {
-
-  constructor(public http:HttpClient) { }
-
-  checkLoginDetails(product:Product):Observable<any>{
-    return this.http.post("http://localhost:9090/api/admin/signIn",product,
-    {responseType:'text'});
+  config: any = {
+    deployed: false,
+    URL: 'http://localhost:',
+    PORT: '4200',
+    URL2: '/api'
   }
 
+  constructor(public http: HttpClient) { }
 
-  //test data 
-//   {"productName":"Admin","productLine":"ilpgroup16admin" ,"productDescription":"ilpgroup16admin" ,
-//   "productImage":"ilpgroup16admin" ,"quantityInStock":"20" ,"price":"12"
-//  ,"ProductVendor":"ilpgroup16admin"
-//  }
-adminAddProduct(product:Product):Observable<any>{
-    return this.http.post("http://localhost:9090/api/admin/addProduct",product,
-    {responseType:'text'});
+  getProducts(): Observable<Product> {
+    let URL: string
+    if (this.config['deployed']) {
+      URL = this.config['URL2'] + '/v1/products/getallproducts'
+    } else {
+      URL = this.config['URL'] + this.config['PORT'] + '/v1/products/getallproducts'
+    }
+    console.log(`Traveling to: ${URL}`)
+    return this.http.get<Product>(URL)
   }
 
-
-
+  deleteProducts(id: any): Observable<ServerResponse> {
+    let URL: string
+    if (this.config['deployed']) {
+      URL = this.config['URL2'] + '/v1/products/deleteproduct/' + id
+    } else {
+      URL = this.config['URL'] + this.config['PORT'] + '/v1/products/deleteproduct/' + id
+    }
+    console.log(`Traveling to: ${URL}`)
+    
+    return this.http.delete<ServerResponse>(URL)
+  }
 }
