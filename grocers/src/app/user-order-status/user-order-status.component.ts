@@ -21,7 +21,9 @@ export class UserOrderStatusComponent implements OnInit {
      this.getOrderInfo();
      this.activatedRoute.params.subscribe(data => {
       this.userId = data.user;
+      // console.log(this.userId );
     })
+    
   }
 
    // get the database detail 

@@ -31,6 +31,7 @@ import { UserOrderStatusComponent } from './user-order-status/user-order-status.
 import { UserEditProfileComponent } from './user-edit-profile/user-edit-profile.component';
 import { UserFundsComponent } from './user-funds/user-funds.component';
 import { EmployeeRegisterPasswordComponent } from './employee-register-password/employee-register-password.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { EmployeeRegisterPasswordComponent } from './employee-register-password/
     UserOrderStatusComponent,
     UserEditProfileComponent,
     UserFundsComponent,
-    EmployeeRegisterPasswordComponent
+    EmployeeRegisterPasswordComponent,
+    UserDashboardComponent
 
   ],
   imports: [
