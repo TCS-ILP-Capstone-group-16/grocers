@@ -34,6 +34,15 @@ export class UserService {
 
   constructor(public http:HttpClient) { }
 
+
+  checkUserLogin(login: User): Observable<any> {
+    return this.http.post("http://localhost:9090/api/user/signIn", login,{responseType:'text'});
+  }
+
+  checkUserSignup(login: User): Observable<any> {
+    return this.http.post("http://localhost:9090/api/user/signUp", login,{responseType:'text'});
+  }
+
   getUserByUsername(username:string):Observable<User>{
     let URL:string
     if(this.config['deployed']){
