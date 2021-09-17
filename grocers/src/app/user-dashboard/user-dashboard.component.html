@@ -6,6 +6,18 @@
     </div>
 
     <ul class="list-unstyled components">
+      <<li>
+        <a routerLink="{{ userID }}/select-items">Select Items</a>
+      </li>
+      <li>
+        <a routerLink="{{ userID }}/deleteItems">Delete Items</a>
+      </li>
+      <li>
+        <a routerLink="{{ userID }}/viewItems">View Items</a>
+      </li>
+      <li>
+        <a routerLink="{{ userID }}/checkout">Checkout</a>
+      </li>
       <li>
         <a routerLink="{{ userID }}/orderStatus">Order History</a>
       </li>
@@ -27,3 +39,4 @@
     <router-outlet></router-outlet>
   </div>
 </div>
+

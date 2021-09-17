@@ -28,10 +28,11 @@ msg?:string
 
     this.adminSer.checkAdminLoginDetails(login).subscribe(result => {
 
+    
       if (result == "Success") {
         this.router.navigate(["adminhome", login.username]); // // appended name through path
       } else {
-      //  this.msg  = "InValid username or password";
+           this.msg  = "Invalid username or password";
            this.msg  = result;
       }
     }, error => console.log(error));

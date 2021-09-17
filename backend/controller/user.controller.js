@@ -1,5 +1,16 @@
 let userModel = require("../model/user.model");
 
+let getAllProductDetails = (request, response) => {
+
+    productModel.find({}, (err, data) => {
+        if (!err) {
+            response.json(data);
+        } else {
+            response.json(err);
+        }
+    })
+
+}
 // get all the user data
 let fetchUserDetails = (req, res) => {
 
@@ -95,4 +106,4 @@ let userSignup = (req, response) => {
         }
     })
 }
-module.exports = { fetchUserDetails, updateBalance, updateProfile, userSignin, userSignup};
+module.exports = { fetchUserDetails, updateBalance, updateProfile, getAllProductDetails, userSignin, userSignup};
