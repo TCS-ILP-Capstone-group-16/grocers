@@ -17,6 +17,7 @@ let getAllProductDetails = (request, response) => {
 
 }
 
+
 let addProductInfo = (request, response) => {
     let product = request.body;
 

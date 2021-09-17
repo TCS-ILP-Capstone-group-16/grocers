@@ -1,5 +1,25 @@
 <p>viewrequest works!</p>
 
-//empoyee will send request here and say what product needs to be updated or deleted and admin will 
-take id and delete. i guess
+<div class="container">
 
+
+    <label class="text-center">Contact Details</label><br/>
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Request ID</th>
+            <th scope="col">Employee ID</th>
+            <th scope="col">Product ID</th>
+            <th scope="col">Description</th>
+          </tr>
+        <tbody>
+            <tr *ngFor = "let request of requests">
+                <td>{{request._id}}</td>
+                <td>{{request.employeeID}}</td>
+                <td>{{request.productId}}</td>
+                <td>{{request.description}}</td>
+            </tr>
+        </tbody>
+      </table>
+</div>

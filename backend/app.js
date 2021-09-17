@@ -6,6 +6,7 @@ let cors = require("cors");
 // let routerProduct = require("./router/product.router");
 let adminRouter = require("./router/adminLogin.router");
 let productRouter = require("./router/product.router");
+let requestRouter = require("./router/request.router");
 
 
 let userInfo = require("./router/user.router");
@@ -31,7 +32,7 @@ mongoose.connect(url).then(res => console.log("connected")).catch(error => conso
 // http://localhost:9090/api/admin/signIn        : post adminSignIn
 app.use("/api/admin", adminRouter);
 app.use("/api/admin", productRouter);
-
+app.use("/api/admin", requestRouter);
 
 app.use("/api/user", userInfo);
 app.use("/api/order", orderInfo);
