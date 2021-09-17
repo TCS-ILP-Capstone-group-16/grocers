@@ -2,6 +2,9 @@
 const { isValidObjectId } = require("mongoose");
 let productModel = require("../model/product.model");
 
+
+
+//---------Admin
 let getAllProductDetails = (request, response) => {
 
     productModel.find({}, (err, data) => {
@@ -62,6 +65,15 @@ let updateProductDetails = (request, response) => {
         }
     })
 }
+//---------------------------------------------------------------------------Admin
+
+
+
+
+
+
+
+
 
 module.exports = { getAllProductDetails, addProductInfo, deleteProductInfo, updateProductDetails }
 

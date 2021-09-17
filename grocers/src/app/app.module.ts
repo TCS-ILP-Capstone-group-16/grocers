@@ -26,6 +26,12 @@ import { ShippedOrdersComponent } from './update-order-status/shipped-orders/shi
 import { DeliveredOrdersComponent } from './update-order-status/delivered-orders/delivered-orders.component';
 import { CancelledOrdersComponent } from './update-order-status/cancelled-orders/cancelled-orders.component';
 import { OutForDeliveryOrdersComponent } from './update-order-status/out-for-delivery-orders/out-for-delivery-orders.component';
+import { EmployeeSignInComponent } from './employee-sign-in/employee-sign-in.component';
+import { UserOrderStatusComponent } from './user-order-status/user-order-status.component';
+import { UserEditProfileComponent } from './user-edit-profile/user-edit-profile.component';
+import { UserFundsComponent } from './user-funds/user-funds.component';
+import { EmployeeRegisterPasswordComponent } from './employee-register-password/employee-register-password.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +54,13 @@ import { OutForDeliveryOrdersComponent } from './update-order-status/out-for-del
     ShippedOrdersComponent,
     DeliveredOrdersComponent,
     CancelledOrdersComponent,
-    OutForDeliveryOrdersComponent
+    OutForDeliveryOrdersComponent,
+    EmployeeSignInComponent,
+    UserOrderStatusComponent,
+    UserEditProfileComponent,
+    UserFundsComponent,
+    EmployeeRegisterPasswordComponent,
+    UserDashboardComponent
 
   ],
   imports: [

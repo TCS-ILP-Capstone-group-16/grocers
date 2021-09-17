@@ -1,0 +1,29 @@
+<div class="wrapper">
+  <!-- Sidebar  -->
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <h2>Grocer 2.0</h2>
+    </div>
+
+    <ul class="list-unstyled components">
+      <li>
+        <a routerLink="{{ userID }}/orderStatus">Order History</a>
+      </li>
+      <li>
+        <a routerLink="{{ userID }}/editProfile">Edit Profile</a>
+      </li>
+      <li>
+        <a routerLink="{{ userID }}/funds">Account Recharge</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Page Content  -->
+  <div id="content">
+    <nav class="navbar navbar-light bg-light">
+      Welcome User {{ username }}
+      <a routerLink="/" class="btn btn-danger my-2 my-sm-0">Logout</a>
+    </nav>
+    <router-outlet></router-outlet>
+  </div>
+</div>

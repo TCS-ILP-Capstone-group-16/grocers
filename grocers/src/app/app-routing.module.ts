@@ -9,12 +9,35 @@ import { DeleteproductComponent } from './deleteproduct/deleteproduct.component'
 import { UpdateproductComponent } from './updateproduct/updateproduct.component';
 import { ViewrequestComponent } from './viewrequest/viewrequest.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { AddEmployeeComponent } from './add-employee/add-employee.component';
+import { DeleteEmployeeComponent } from './delete-employee/delete-employee.component';
+import { GenerateReportsComponent } from './generate-reports/generate-reports.component';
+import { EmployeeRegisterPasswordComponent } from './employee-register-password/employee-register-password.component';
+import { EmployeeSignInComponent } from './employee-sign-in/employee-sign-in.component';
+import { UserEditProfileComponent } from './user-edit-profile/user-edit-profile.component';
+import { UserFundsComponent } from './user-funds/user-funds.component';
+import { UserOrderStatusComponent } from './user-order-status/user-order-status.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 
-const routes: Routes= [
-  { path: '', component: UserSignInComponent},
-  { path: 'signup', component: UserSignUpComponent},
+const routes: Routes = [
+  { path: '', component: UserSignInComponent },
+  { path: 'signup', component: UserSignUpComponent },
   { path: "adminlogin", component: AdminloginComponent },
-  //{ path: "", redirectTo: "adminlogin", pathMatch: "prefix" },
+
+  { path: "employeeSignIn", component: EmployeeSignInComponent },
+  { path: "employeeRegisterPW", component: EmployeeRegisterPasswordComponent },
+
+  {
+    path: "userHome/:username", component: UserDashboardComponent,
+
+    children: [
+
+      { path: ":user/orderStatus", component: UserOrderStatusComponent },
+      { path: ":user/editProfile", component: UserEditProfileComponent },
+      { path: ":user/funds", component: UserFundsComponent },
+    ]
+  },
+
 
   {
     path: "adminhome/:uname", component: AdminhomeComponent,
@@ -23,10 +46,14 @@ const routes: Routes= [
       { path: "addproduct", component: AddproductComponent },
       { path: "deleteproduct", component: DeleteproductComponent },
       { path: "updateproduct", component: UpdateproductComponent },
-      { path: "viewrequest", component: ViewrequestComponent }
+      { path: "viewrequest", component: ViewrequestComponent },
+      { path: "addemployee", component: AddEmployeeComponent },
+      { path: "deleteemployee", component: DeleteEmployeeComponent },
+      { path: "generatereports", component: GenerateReportsComponent }
     ]
  
   },
+
   { path: "**", component: NotFoundComponent },
 ];
 

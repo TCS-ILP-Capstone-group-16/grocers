@@ -1,11 +1,12 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { from, Observable, Observer } from 'rxjs';
-import { ServerResponse } from './model.serverResponse'
-import { Product } from './model.product'
-import { User } from './model.user'
-import { Ticket } from './model.ticket'
+import { ServerResponse } from './model.serverResponse';
+import { Product } from './model.product';
+import { User } from './model.user';
+import { Ticket } from './model.ticket';
 import { Order } from './model.order';
+import { Items } from "./items";
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +34,15 @@ export class UserService {
   }
 
   constructor(public http:HttpClient) { }
+
+
+  checkUserLogin(login: User): Observable<any> {
+    return this.http.post("http://localhost:9090/api/user/userSignIn", login,{responseType:'text'});
+  }
+
+  checkUserSignup(login: User): Observable<any> {
+    return this.http.post("http://localhost:9090/api/user/signUp", login,{responseType:'text'});
+  }
 
   getUserByUsername(username:string):Observable<User>{
     let URL:string
@@ -171,5 +181,25 @@ export class UserService {
       URL = this.config['URL']+this.config['PORT']+'/v1/orders/getallorders'
     }
     return this.http.get<Order>(URL)
+  }
+
+  // call get method to get all user data. 
+  retrieveUserInfo():Observable<any>{
+    return this.http.get<any>("http://localhost:9090/api/user/getUserInfo");
+  }
+
+  // call get method to get all Order details
+  retrieveItemsInfo():Observable<Items[]>{
+    return this.http.get<Items[]>("http://localhost:9090/api/order/getOrderDetails");
+  }
+  
+  // update the profile page by sending updated info to the database
+  updateUserProfile(email:any, pw: any, address: any, phone: any, id: any):Observable<any>{
+    return this.http.put<any>("http://localhost:9090/api/user/editProfile",{Email: email, Password: pw, Address: address, PhoneNumber: phone, userID: id });
+  }
+
+  // update the user bank balance 
+  updateUserBankAmount(account: any, amount: any, id: any):Observable<any> {
+    return this.http.put<any>("http://localhost:9090/api/user/changeFunds", {BankAccount: account, BankBalance: amount, userID: id });
   }
 }

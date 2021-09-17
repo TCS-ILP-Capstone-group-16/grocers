@@ -8,12 +8,17 @@ let adminRouter = require("./router/adminLogin.router");
 let productRouter = require("./router/product.router");
 
 
+let userInfo = require("./router/user.router");
+let orderInfo = require("./router/orderDetails.router");
+let employeeInfo = require("./router/employee.router");
+
 // create the reference of express 
 let app = express();
 
 // add middleware 
 app.use(cors());
 app.use(bodyParser.json())
+
 
 //url database 
 let url = "mongodb://localhost:27017/tcsmean"
@@ -28,6 +33,9 @@ app.use("/api/admin", adminRouter);
 app.use("/api/admin", productRouter);
 
 
+app.use("/api/user", userInfo);
+app.use("/api/order", orderInfo);
+app.use("/api/employee", employeeInfo);
 
 
 
