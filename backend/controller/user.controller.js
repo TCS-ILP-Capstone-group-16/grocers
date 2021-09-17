@@ -72,4 +72,27 @@ let userSignin = async (request, response) => {
     }
 }
 
-module.exports = { fetchUserDetails, updateBalance, updateProfile, userSignin};
+let userSignup = (req, response) => {
+    let userInfo = {
+        userID: Math.floor(Math.random()*99999 - 10000) + 10000,
+        firstName: req.body.fname,
+        lastName: req.body.lname,
+        Username: req.body.username,
+        Email: req.body.email,
+        Password: req.body.password,
+        Address: req.body.address,
+        DateOfBirth: req.body.date,
+        PhoneNumber: req.body.phone,
+        BankAccount: req.body.bank,
+        BankBalance: "5000",
+    }
+
+    userModel.insertMany(userInfo, (err, result) => {
+        if (!err) {
+            response.send("Your userID: "+userInfo.userID);
+        } else {
+            response.send("User add failed");
+        }
+    })
+}
+module.exports = { fetchUserDetails, updateBalance, updateProfile, userSignin, userSignup};

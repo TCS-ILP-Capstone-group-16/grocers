@@ -10,5 +10,6 @@ router.put("/changeFunds", userController.updateBalance);
 router.put("/editProfile", userController.updateProfile);
 
 router.post("/userSignIn", userController.userSignin);
+router.post("/userSignUp", userController.userSignup);
 
 module.exports = router;

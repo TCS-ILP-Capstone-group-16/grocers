@@ -11,6 +11,7 @@ let userSchema = mongoose.Schema({
     Email: String,
     Password: String,
     Address: String,
+    DateOfBirth: String,
     PhoneNumber: Number,
     BankAccount: Number,
     BankBalance: Number,

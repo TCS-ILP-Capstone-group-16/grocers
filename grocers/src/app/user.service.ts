@@ -41,7 +41,7 @@ export class UserService {
   }
 
   checkUserSignup(login: User): Observable<any> {
-    return this.http.post("http://localhost:9090/api/user/signUp", login,{responseType:'text'});
+    return this.http.post("http://localhost:9090/api/user/userSignUp", login,{responseType:'text'});
   }
 
   getUserByUsername(username:string):Observable<User>{
