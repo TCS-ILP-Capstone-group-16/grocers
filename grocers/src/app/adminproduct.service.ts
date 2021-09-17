@@ -19,28 +19,49 @@ export class AdminproductService {
 
   constructor(public http: HttpClient) { }
 
-//   checkLoginDetails(product: Product): Observable<any> {
-//     let URL: string
-// //should we use api or v1 talk to them
-//     if (this.config['deployed']) {
-//       URL = this.config['URL2'] + '/api/admin/signIn'
-//     } else {
-//       URL = this.config['URL'] + this.config['PORT'] + '/api/admin/signIn'
-//     }
-
-//     return this.http.post(URL, product,
-//       { responseType: 'text' });
-//   }
-
 
   //test data 
   //   {"productName":"Admin","productLine":"ilpgroup16admin" ,"productDescription":"ilpgroup16admin" ,
   //   "productImage":"ilpgroup16admin" ,"quantityInStock":"20" ,"price":"12"
   //  ,"ProductVendor":"ilpgroup16admin"
   //  }
+
+
+  admindeleteProduct(id: string): Observable<any> {
+    let URL: string
+    //should we use api or v1 talk to them
+    if (this.config['deployed']) {
+      URL = this.config['URL2'] + '/api/admin/deleteProduct/' + id
+    } else {
+      URL = this.config['URL'] + this.config['PORT'] + '/api/admin/deleteProduct/' + id
+    }
+
+
+    return this.http.delete(URL);
+
+
+  }
+
+  adminupdateProduct(id: string, data: any): Observable<any> {
+    let URL: string
+    //should we use api or v1 talk to them
+    if (this.config['deployed']) {
+      URL = this.config['URL2'] + '/api/admin/updateProduct/' + id
+    } else {
+      URL = this.config['URL'] + this.config['PORT'] + '/api/admin/updateProduct/' + id
+    }
+
+
+    return this.http.put(URL, data);
+
+
+  }
+
+
+
   adminAddProduct(product: Product): Observable<any> {
-       let URL: string
-//should we use api or v1 talk to them
+    let URL: string
+    //should we use api or v1 talk to them
     if (this.config['deployed']) {
       URL = this.config['URL2'] + '/api/admin/addProduct'
     } else {

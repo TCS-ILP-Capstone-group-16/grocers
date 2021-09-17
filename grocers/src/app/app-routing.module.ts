@@ -25,8 +25,7 @@ const routes: Routes= [
       { path: "updateproduct", component: UpdateproductComponent },
       { path: "viewrequest", component: ViewrequestComponent }
     ]
-
-
+ 
   },
   { path: "**", component: NotFoundComponent },
 ];

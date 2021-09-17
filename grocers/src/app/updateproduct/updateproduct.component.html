@@ -1,1 +1,33 @@
-<p>updateproduct works!</p>
+<div>
+    <h2>Update Product</h2>
+
+    <form action="/admin/updateproduct" [formGroup]="updateProductRef" (ngSubmit)="adminUpdateProduct()" method="POST">
+        <div class="form-group  ">
+            <label for="id">Product ID</label>
+            <input class="form-control forminput" id="id" formControlName="_id" required />
+        </div>
+
+        
+        <div class="form-group">
+            <label for="quantityInStock">Quantity In Stock </label>
+            <input class="form-control forminput" formControlName="quantityInStock" />
+        </div>
+
+        <div class="form-group">
+            <label for="price">Price </label>
+            <input class="form-control forminput" formControlName="price" id="price" />
+        </div>
+
+        <div class="form-group">
+            <label for="productDiscount">Discount </label>
+            <input class="form-control forminput" formControlName="productDiscount" id="productDiscount" />
+        </div>
+
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary ">Submit</button>
+        </div>
+
+    </form>
+
+</div>
