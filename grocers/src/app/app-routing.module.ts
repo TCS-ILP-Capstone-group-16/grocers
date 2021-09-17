@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'signup', component: UserSignUpComponent },
   { path: "adminlogin", component: AdminloginComponent },
   { path: "raiseticket", component: RaiseticketComponent },
-  { path: "userhome", component: UserhomeComponent },
+  
 
   { path: "employeeSignIn", component: EmployeeSignInComponent },
   { path: "employeeRegisterPW", component: EmployeeRegisterPasswordComponent },

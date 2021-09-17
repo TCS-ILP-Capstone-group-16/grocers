@@ -16,14 +16,14 @@
   <h2>Ticket system</h2>
 
 
-  <form action="" method="post" [formGroup]="adminloginRef" (ngSubmit)="checkAdmin()" class="form-group">
+  <form action="" method="post" [formGroup]="addTicketRef" (ngSubmit)="addTicket()" class="form-group">
     <div class="container">
       <label for="uname"><b>Username</b></label>
       <input class="col col-form-label" type="text" placeholder="Username" name="uname"
         formControlName="username" required>
 
       <label for="email"><b>Email</b></label>
-      <input class="col col-form-label" type="text" placeholder="Email" name="email"
+      <input class="col col-form-label" type="email" placeholder="Email" name="email"
         formControlName="email" required>
 
       <label for="psw"><b>Reason for ticket</b></label>

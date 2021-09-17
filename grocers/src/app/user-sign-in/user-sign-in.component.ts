@@ -27,7 +27,7 @@ export class UserSignInComponent implements OnInit {
     this.userService.checkUserLogin(userLogin).subscribe(result => {
     for(let attempts = 0; attempts < 3;){
       if (result == "Success") {
-        this.router.navigate(["userhome", userLogin.username]);
+        this.router.navigate(["user-dashboard", userLogin.username]);
       } else {
           this.msg  = "Invalid username or password";
            this.msg = result;

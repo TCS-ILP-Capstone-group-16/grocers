@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AdminService } from '../admin.service';
+import { TicketService } from '../ticket.service';
 
 @Component({
   selector: 'app-raiseticket',
@@ -10,35 +10,25 @@ import { AdminService } from '../admin.service';
 })
 export class RaiseticketComponent implements OnInit {
 
-  adminloginRef = new FormGroup({
+    addTicketRef = new FormGroup({
     username: new FormControl(),
-    password: new FormControl()
+    email: new FormControl(),
+    ticket: new FormControl()
   });
 
-  constructor(public adminSer: AdminService, public router: Router) { }
-msg?:string
+  constructor(public raiseticketSer: TicketService) { }
+
+  msg?: string;
   ngOnInit(): void {
   }
 
-  checkAdmin() {
-    let login = this.adminloginRef.value;
-
-
-    this.adminSer.checkAdminLoginDetails(login).subscribe(result => {
-
-      if (result == "Success") {
-        this.router.navigate(["adminhome", login.username]); // // appended name through path
-      } else {
-      //  this.msg  = "InValid username or password";
-           this.msg  = result;
-      }
-    }, error => console.log(error));
-
- 
-
-    this.adminloginRef.reset();
+  addTicket() {
+    let addprod = this.addTicketRef.value;
+    this.raiseticketSer.addTicket(addprod).
+      subscribe(result => this.msg = result, error => console.log(error));
+    this.addTicketRef.reset();
   }
-
+ 
 }
 
 
