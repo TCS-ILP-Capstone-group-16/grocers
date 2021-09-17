@@ -72,4 +72,25 @@ let userSignin = async (request, response) => {
     }
 }
 
-module.exports = { fetchUserDetails, updateBalance, updateProfile, userSignin};
+let userSignup = (req, response) => {
+    let userInfo = {
+        firstName: req.body.fname,
+        lastName: req.body.lname,
+        Username: req.body.username,
+        Email: req.body.email,
+        Password: req.body.password,
+        Address: req.body.address,
+        DateOfBirth: req.body.date,
+        PhoneNumber: req.body.phone,
+        BankBalance: "5000",
+    }
+
+    userModel.insertMany(userInfo, (err, result) => {
+        if (!err) {
+            response.send("Success")
+        } else {
+            response.send(err);
+        }
+    })
+}
+module.exports = { fetchUserDetails, updateBalance, updateProfile, userSignin, userSignup};
