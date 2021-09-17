@@ -1,7 +1,9 @@
 <div>
     <form [formGroup]="formRef" (ngSubmit)="submit()">
-        <label>Emp ID</label>
-        <input type="text" formControlName="id" id="EID"><br/>
+        <div class="form-group w-25">
+            <label>Emp ID</label>
+            <input type="text" class="form-control forminput" formControlName="id" id="EID"><br/>
+        </div>
         <div>{{msg}}</div>
         <button type="submit">Delete Employee</button>
     </form>
