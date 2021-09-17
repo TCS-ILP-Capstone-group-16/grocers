@@ -1,24 +1,42 @@
-<div>
+<div style="padding:0%">
     <form [formGroup]="formRef" (ngSubmit)="submit()">
-        <label>First Name</label>
-        <input type="text" formControlName="fname" id="first"><br/>
-        <label>Last Name </label>
-        <input type="text" formControlName="lname" id="last"><br/>
-        <label>Email</label>
-        <input type="text" formControlName="email" id="mail"><br/>
-        <label>Username</label>
-        <input type="text" formControlName="username" id="uname"><br/>
-        <label>Password </label>
-        <input type="password" formControlName="password" id="pass"><br/>
-        <label>Date of Birth</label>
-        <input type="date" formControlName="date" id="dob"><br/>
-        <label>Phone No. </label>
-        <input type="text" formControlName="phone" id="number"><br/>
-        <label>Address</label>
-        <input type="text" formControlName="address" id="addr"><br/>
-        <label>Bank Account Number</label>
-        <input type="text" formControlName="bank" id="money"><br/>
+        <div class="form-group w-25">
+            <label>First Name</label>
+            <input type="text" class="form-control forminput" formControlName="fname" id="first">
+        </div>
+        <div class="form-group w-25">
+            <label>Last Name </label>
+            <input type="text" class="form-control forminput" formControlName="lname" id="last">
+        </div>
+        <div class="form-group w-25">
+            <label>Email</label>
+            <input type="text" class="form-control forminput" formControlName="email" id="mail">
+        </div>
+        <div class="form-group w-25">
+            <label>Username</label>
+            <input type="text" class="form-control forminput" formControlName="username" id="uname">
+        </div>
+        <div class="form-group center w-25">
+            <label>Password </label>
+            <input type="password" class="form-control forminput" formControlName="password" id="pass">
+        </div>
+        <div class="form-group center w-25">
+            <label>Date of Birth</label>
+            <input type="date" class="form-control" formControlName="date" id="dob">
+        </div>
+        <div class="form-group center w-25">
+            <label>Phone No. </label>
+            <input type="text" class="form-control" formControlName="phone" id="number">
+        </div>
+        <div class="form-group center w-25">
+            <label>Address</label>
+            <input type="text" class="form-control" formControlName="address" id="addr">
+        </div>
+        <div class="form-group center w-25">
+            <label>Bank Account Number</label>
+            <input type="text" class="form-control" formControlName="bank" id="money">
+        </div>
         <div>{{msg}}</div>
-        <button type="submit">Sign Up</button>
+        <button class="btn btn-primary" type="submit">Sign Up</button>
     </form>
 </div>
