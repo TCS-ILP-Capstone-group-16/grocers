@@ -1,1 +1,93 @@
-<p>generate-reports works!</p>
+<nav class="navbar navbar-light">
+    <span class="navbar-text">
+        <button class="btn" (click)="swap(1)">Sales Report</button>
+        <!-- <button class="btn" (click)="swap(2)">Weekly Report</button>
+        <button class="btn" (click)="swap(3)">Monthly Report</button> -->
+        <button class="btn" (click)="swap(4)">Product Report</button>
+        <button class="btn" (click)="swap(5)">Customer Report</button>
+    </span>
+</nav>
+<div *ngIf="daily">
+    <caption>Sales Reports</caption>
+    <table class = "table table-bordered">
+        <thead class="thead-light">
+            <tr><th>Order #</th>
+                <th>Product Code</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Order Status</th>
+                <th>UserID</th>
+            </tr>
+        </thead>
+        <tr *ngFor="let order of orders">
+            <td>{{order.orderNumber}}</td>
+            <td>{{order.productCode}}</td>
+            <td>{{order.productName}}</td>
+            <td>{{order.quantityOrdered}}</td>
+            <td>{{order.priceEach}}</td>
+            <td>{{order.Status}}</td>
+            <td>{{order.UserID}}</td>
+        </tr>
+    </table>
+</div>
+<!-- <div *ngIf="weekly">
+    Weekly Report
+</div>
+<div *ngIf="monthly">
+    Monthly Report
+</div> -->
+<div *ngIf="product">
+    <caption>Product Reports</caption>
+    <table class="table table-bordered">
+        <thead class="thead-light">
+            <tr><th>Product Name</th>
+                <th>Product Line</th>
+                <th>Product Descr.</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Vendor</th>
+                <th>Discount</th>
+            </tr>
+        </thead>
+        <tr *ngFor="let product of products">
+            <td>{{product.productName}}</td>
+            <td>{{product.productLine}}</td>
+            <td>{{product.productDescription}}</td>
+            <td>{{product.quantityInStock}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.ProductVendor}}</td>
+            <td>{{product.productDiscount}}</td>
+        </tr>
+    </table>
+</div>
+<div *ngIf="customer">
+    <caption>Customer Reports</caption>
+    <table class="table table-bordered">
+        <thead class="thead-light">
+            <tr><th scope="col">UserID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Date of Birth</th>
+                <th>Phone Number</th>
+                <th>Bank Number</th>
+                <th>Bank Balance</th>
+            </tr>
+        </thead>
+        <tr *ngFor="let user of users">
+            <td>{{user.userID}}</td>
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.Username}}</td>
+            <td>{{user.Email}}</td>
+            <td>{{user.Address}}</td>
+            <td>{{user.DateOfBirth}}</td>
+            <td>{{user.PhoneNumber}}</td>
+            <td>{{user.BankAccount}}</td>
+            <td>{{user.BankBalance}}</td>
+        </tr>
+    </table>
+</div>

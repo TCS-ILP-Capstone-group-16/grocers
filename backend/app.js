@@ -43,7 +43,9 @@ app.use("/api/admin", requestRouter);
 
 app.use("/api/user", userInfo);
 app.use("/api/order", orderInfo);
+app.use("/api/orders", orderInfo);
 app.use("/api/employee", employeeInfo);
+app.use("/api/products", productRouter);
 
 
 

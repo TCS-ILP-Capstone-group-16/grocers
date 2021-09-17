@@ -1,15 +1,16 @@
 let orderModel = require("../model/orderDetails.model");
 
 // get the whole order tables from the database
-let fetchOrderDetails = (req, res) => {
+let fetchOrderDetails = (request, response) => {
 
     orderModel.find({}, (err, data) => {
-        if(!err){
-            res.json(data);
+        if (!err) {
+            response.json(data);
         } else {
-            res.send("Something Wrong! Please Try Again!")  
+            response.json(err);
         }
-    });
+    })
+
 }
 
 module.exports = {fetchOrderDetails};
