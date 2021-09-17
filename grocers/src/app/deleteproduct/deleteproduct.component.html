@@ -1,1 +1,12 @@
-<p>deleteproduct works!</p>
+<p>deleteproduct that has zero demains!</p>
+<div>
+    
+        <form action="/admin/deleteproduct" [formGroup]="deleteProductRef" (ngSubmit)="admindeleteProduct()" method="POST">
+
+        <label> Product to delete </label>
+        <input type="string" formControlName="_id" required /> <br><br>
+        <input type="submit" name="submit" /> <br /><br>
+    </form>
+ 
+
+</div>

@@ -51,8 +51,7 @@ const routes: Routes = [
       { path: "deleteemployee", component: DeleteEmployeeComponent },
       { path: "generatereports", component: GenerateReportsComponent }
     ]
-
-
+ 
   },
 
   { path: "**", component: NotFoundComponent },
