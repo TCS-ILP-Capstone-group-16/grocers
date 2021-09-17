@@ -13,3 +13,11 @@
   margin-left: 1em;
   margin-right: 1em;
 }
+
+.card-text {
+  font-size: 1.1em;
+}
+
+.card-subtitle {
+  font-size: 1.2em;
+}
