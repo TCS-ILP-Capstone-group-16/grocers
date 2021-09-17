@@ -23,6 +23,9 @@ export class UserOrderStatusComponent implements OnInit {
       this.userId = data.user;
       // console.log(this.userId );
     })
+
+    //this.userId = this.activatedRoute.snapshot.paramMap.get('user');
+
     
   }
 

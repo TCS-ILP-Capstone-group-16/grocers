@@ -34,6 +34,7 @@ import { EmployeeRegisterPasswordComponent } from './employee-register-password/
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { UserhomeComponent } from './userhome/userhome.component';
 import { RaiseticketComponent } from './raiseticket/raiseticket.component';
+import { SelectItemsComponent } from './select-items/select-items.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { RaiseticketComponent } from './raiseticket/raiseticket.component';
     EmployeeRegisterPasswordComponent,
     UserDashboardComponent,
     UserhomeComponent,
-    RaiseticketComponent
+    RaiseticketComponent,
+    SelectItemsComponent,
 
   ],
   imports: [

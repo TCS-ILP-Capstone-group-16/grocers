@@ -32,9 +32,10 @@ const routes: Routes = [
   { path: "employeeRegisterPW", component: EmployeeRegisterPasswordComponent },
 
   {
-    path: "userHome/:user", component: UserDashboardComponent,
+    path: "userhome/:username", component: UserDashboardComponent,
 
     children: [
+      
 
       { path: ":user/orderStatus", component: UserOrderStatusComponent },
       { path: ":user/editProfile", component: UserEditProfileComponent },
@@ -55,8 +56,7 @@ const routes: Routes = [
       { path: "deleteemployee", component: DeleteEmployeeComponent },
       { path: "generatereports", component: GenerateReportsComponent }
     ]
-
-
+ 
   },
 
   { path: "**", component: NotFoundComponent },

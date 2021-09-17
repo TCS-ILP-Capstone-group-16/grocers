@@ -9,16 +9,33 @@ import { UserService } from '../user.service';
 })
 export class UserDashboardComponent implements OnInit {
 
-  userId?: number;
-  
+  username?: string;
+  userID?: number;
+
   constructor(
-    public activatedRoute: ActivatedRoute
+    public activatedRoute: ActivatedRoute,
+    public userSer: UserService,
   ) { }
 
   ngOnInit(): void {
+    this.getUserID();
     this.activatedRoute.params.subscribe(data => {
-      this.userId = data.user;
+      this.username = data.username;
     })
+
+
+  }
+
+   // get the database detail 
+   getUserID() {
+    this.userSer.retrieveUserInfo().subscribe(result => {
+     
+      // find the specfic user in the database 
+      let user = result.find( (userData: any) => userData.Username == this.username);
+      this.userID = user.userID;
+    }, error => {
+      console.log(error);
+    });
   }
 
 }

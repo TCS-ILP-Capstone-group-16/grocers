@@ -7,7 +7,7 @@ let cors = require("cors");
 let adminRouter = require("./router/adminLogin.router");
 let productRouter = require("./router/product.router");
 let ticketRouter = require("./router/ticket.router");
-
+let  = require("./router/user.router")
 let userInfo = require("./router/user.router");
 let orderInfo = require("./router/orderDetails.router");
 let employeeInfo = require("./router/employee.router");

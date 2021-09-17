@@ -1,5 +1,16 @@
 let userModel = require("../model/user.model");
 
+let getAllProductDetails = (request, response) => {
+
+    productModel.find({}, (err, data) => {
+        if (!err) {
+            response.json(data);
+        } else {
+            response.json(err);
+        }
+    })
+
+}
 // get all the user data
 let fetchUserDetails = (req, res) => {
 
@@ -62,4 +73,35 @@ let updateBalance =  (req, res) => {
    });
 }
 
-module.exports = { fetchUserDetails, updateBalance, updateProfile};
+let userSignin = async (request, response) => {
+    let user = request.body;
+    let userInfo = await userModel.findOne({ username: user.Username, password: user.Password });
+    if (userInfo != null) {
+        response.send("Success");
+    } else {
+        response.send("Invalid username or password");
+    }
+}
+
+let userSignup = (req, response) => {
+    let userInfo = {
+        firstName: req.body.fname,
+        lastName: req.body.lname,
+        Username: req.body.username,
+        Email: req.body.email,
+        Password: req.body.password,
+        Address: req.body.address,
+        DateOfBirth: req.body.date,
+        PhoneNumber: req.body.phone,
+        BankBalance: "5000",
+    }
+
+    userModel.insertMany(userInfo, (err, result) => {
+        if (!err) {
+            response.send("Success")
+        } else {
+            response.send(err);
+        }
+    })
+}
+module.exports = { fetchUserDetails, updateBalance, updateProfile, userSignin, userSignup};

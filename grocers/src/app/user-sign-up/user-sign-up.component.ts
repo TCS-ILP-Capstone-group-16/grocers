@@ -15,6 +15,7 @@ export class UserSignUpComponent implements OnInit {
     fname:new FormControl("",[Validators.required]),
     lname:new FormControl("",[Validators.required]),
     email:new FormControl("",[Validators.required]),
+    username:new FormControl("",[Validators.required]),
     password:new FormControl("",[Validators.required]),
     date:new FormControl("",[Validators.required]),
     phone:new FormControl("",[Validators.required]),
@@ -33,7 +34,7 @@ export class UserSignUpComponent implements OnInit {
      let userInfo = this.formRef.value;
       this.userServ.checkUserSignup(userInfo).subscribe(result => {
         if(result =="Success"){
-          this.router.navigate(["", userInfo.user]);
+          this.router.navigate([""]);
         }
         else{
           this.msg = result;

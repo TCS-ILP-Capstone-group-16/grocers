@@ -8,6 +8,6 @@ let productController = require("../controller/product.controller")
 router.get("/getAllProducts", productController.getAllProductDetails);
 router.post("/addProduct", productController.addProductInfo);
 router.delete("/deleteProduct/:pid", productController.deleteProductInfo);
-router.put("/updateProduct", productController.updateProductDetails);
+router.put("/updateProduct/:pid", productController.updateProductDetails);
 
 module.exports = router;
