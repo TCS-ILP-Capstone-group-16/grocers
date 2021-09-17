@@ -9,4 +9,6 @@ router.get("/getUserInfo", userController.fetchUserDetails);
 router.put("/changeFunds", userController.updateBalance);
 router.put("/editProfile", userController.updateProfile);
 
+router.post("/userSignIn", userController.userSignin);
+
 module.exports = router;

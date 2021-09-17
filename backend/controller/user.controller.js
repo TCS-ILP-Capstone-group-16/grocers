@@ -62,4 +62,14 @@ let updateBalance =  (req, res) => {
    });
 }
 
-module.exports = { fetchUserDetails, updateBalance, updateProfile};
+let userSignin = async (request, response) => {
+    let user = request.body;
+    let userInfo = await userModel.findOne({ username: user.Username, password: user.Password });
+    if (userInfo != null) {
+        response.send("Success");
+    } else {
+        response.send("Invalid username or password");
+    }
+}
+
+module.exports = { fetchUserDetails, updateBalance, updateProfile, userSignin};
