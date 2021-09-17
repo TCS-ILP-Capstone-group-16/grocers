@@ -2,9 +2,9 @@
     
         <form action="/admin/deleteproduct" [formGroup]="deleteProductRef" (ngSubmit)="admindeleteProduct()" method="POST">
 
-        <label> Product to delete </label>
-        <input type="string" formControlName="_id" required /> <br><br>
-        <input type="submit" name="submit" /> <br /><br>
+        <h2> Product to Delete </h2>
+        <input class="form-control forminput" type="string" formControlName="_id" required  placeholder="Enter product Id number"/> <br><br>
+        <input  class="btn btn-primary"  type="submit" name="submit" /> <br /><br>
     </form>
  
 
