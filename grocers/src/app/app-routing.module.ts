@@ -28,7 +28,7 @@ const routes: Routes = [
   { path: "employeeRegisterPW", component: EmployeeRegisterPasswordComponent },
 
   {
-    path: "userHome/:user", component: UserDashboardComponent,
+    path: "userHome/:username", component: UserDashboardComponent,
 
     children: [
 

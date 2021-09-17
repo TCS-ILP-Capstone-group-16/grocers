@@ -7,13 +7,13 @@
 
     <ul class="list-unstyled components">
       <li>
-        <a routerLink="{{ userId }}/orderStatus">Order History</a>
+        <a routerLink="{{ userID }}/orderStatus">Order History</a>
       </li>
       <li>
-        <a routerLink="{{ userId }}/editProfile">Edit Profile</a>
+        <a routerLink="{{ userID }}/editProfile">Edit Profile</a>
       </li>
       <li>
-        <a routerLink="{{ userId }}/funds">Account Recharge</a>
+        <a routerLink="{{ userID }}/funds">Account Recharge</a>
       </li>
     </ul>
   </nav>
@@ -21,7 +21,7 @@
   <!-- Page Content  -->
   <div id="content">
     <nav class="navbar navbar-light bg-light">
-      Welcome User {{ userId }}
+      Welcome User {{ username }}
       <a routerLink="/" class="btn btn-danger my-2 my-sm-0">Logout</a>
     </nav>
     <router-outlet></router-outlet>
