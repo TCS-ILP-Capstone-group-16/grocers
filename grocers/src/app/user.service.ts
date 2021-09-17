@@ -1,12 +1,12 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { from, Observable, Observer } from 'rxjs';
-import { ServerResponse } from './model.serverResponse'
-import { Product } from './model.product'
-import { User } from './model.user'
-import { Ticket } from './model.ticket'
+import { ServerResponse } from './model.serverResponse';
+import { Product } from './model.product';
+import { User } from './model.user';
+import { Ticket } from './model.ticket';
 import { Order } from './model.order';
-import { Items } from "./items"
+import { Items } from "./items";
 
 @Injectable({
   providedIn: 'root'
@@ -37,7 +37,7 @@ export class UserService {
 
 
   checkUserLogin(login: User): Observable<any> {
-    return this.http.post("http://localhost:9090/api/user/signIn", login,{responseType:'text'});
+    return this.http.post("http://localhost:9090/api/user/userSignIn", login,{responseType:'text'});
   }
 
   checkUserSignup(login: User): Observable<any> {

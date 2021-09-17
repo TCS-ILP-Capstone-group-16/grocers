@@ -3,6 +3,7 @@ let mongoose = require("mongoose");
 mongoose.pluralize(null);
 
 let userSchema = mongoose.Schema({
+    
     userID: Number,
     firstName:String,
     lastName:String,
