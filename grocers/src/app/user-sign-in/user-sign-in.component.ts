@@ -25,12 +25,20 @@ export class UserSignInComponent implements OnInit {
   submit(){
     let userLogin = this.formRef.value;
     this.userService.checkUserLogin(userLogin).subscribe(result => {
-
+    for(let attempts = 0; attempts < 3;){
       if (result == "Success") {
-        this.router.navigate(["PLACEHOLDERFORCART", userLogin.username]);
+        this.router.navigate(["userhome", userLogin.username]);
       } else {
+          this.msg  = "Invalid username or password";
            this.msg = result;
+           attempts++
       }
+      if(attempts >= 3){
+        this.msg  = "Account is locked after 3 consecutive failed attempts";       
+      }
+    }
+      
+
     }, error => console.log(error));
     this.formRef.reset();
   }

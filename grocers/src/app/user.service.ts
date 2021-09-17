@@ -202,4 +202,5 @@ export class UserService {
   updateUserBankAmount(account: any, amount: any, id: any):Observable<any> {
     return this.http.put<any>("http://localhost:9090/api/user/changeFunds", {BankAccount: account, BankBalance: amount, userID: id });
   }
+  
 }

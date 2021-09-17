@@ -4,23 +4,21 @@ import { Router } from '@angular/router';
 import { AdminService } from '../admin.service';
 
 @Component({
-  selector: 'app-adminlogin',
-  templateUrl: './adminlogin.component.html',
-  styleUrls: ['./adminlogin.component.css']
+  selector: 'app-raiseticket',
+  templateUrl: './raiseticket.component.html',
+  styleUrls: ['./raiseticket.component.css']
 })
-export class AdminloginComponent implements OnInit {
+export class RaiseticketComponent implements OnInit {
+
   adminloginRef = new FormGroup({
     username: new FormControl(),
     password: new FormControl()
   });
 
-  //public router:Router,
-
   constructor(public adminSer: AdminService, public router: Router) { }
 msg?:string
   ngOnInit(): void {
   }
-
 
   checkAdmin() {
     let login = this.adminloginRef.value;
@@ -28,11 +26,10 @@ msg?:string
 
     this.adminSer.checkAdminLoginDetails(login).subscribe(result => {
 
-    
       if (result == "Success") {
         this.router.navigate(["adminhome", login.username]); // // appended name through path
       } else {
-           this.msg  = "Invalid username or password";
+      //  this.msg  = "InValid username or password";
            this.msg  = result;
       }
     }, error => console.log(error));
@@ -42,15 +39,6 @@ msg?:string
     this.adminloginRef.reset();
   }
 
-
-
-
 }
-
-
-
-
-
-
 
 

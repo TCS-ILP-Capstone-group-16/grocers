@@ -18,11 +18,15 @@ import { UserEditProfileComponent } from './user-edit-profile/user-edit-profile.
 import { UserFundsComponent } from './user-funds/user-funds.component';
 import { UserOrderStatusComponent } from './user-order-status/user-order-status.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { RaiseticketComponent } from './raiseticket/raiseticket.component';
+import { UserhomeComponent } from './userhome/userhome.component';
 
 const routes: Routes = [
   { path: '', component: UserSignInComponent },
   { path: 'signup', component: UserSignUpComponent },
   { path: "adminlogin", component: AdminloginComponent },
+  { path: "raiseticket", component: RaiseticketComponent },
+  { path: "userhome", component: UserhomeComponent },
 
   { path: "employeeSignIn", component: EmployeeSignInComponent },
   { path: "employeeRegisterPW", component: EmployeeRegisterPasswordComponent },
