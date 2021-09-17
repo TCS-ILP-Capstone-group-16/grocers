@@ -14,18 +14,18 @@ export class ProductService {
   config: any = {
     deployed: false,
     URL: 'http://localhost:',
-    PORT: '4200',
+    PORT: '9090',
     URL2: '/api'
   }
 
   constructor(public http: HttpClient) { }
 
-  getProducts(): Observable<Product> {
+  getProducts(): Observable<any> {
     let URL: string
     if (this.config['deployed']) {
-      URL = this.config['URL2'] + '/v1/products/getallproducts'
+      URL = this.config['URL2'] + '/api/products/getallproducts'
     } else {
-      URL = this.config['URL'] + this.config['PORT'] + '/v1/products/getallproducts'
+      URL = this.config['URL'] + this.config['PORT'] + '/api/products/getallproducts'
     }
     console.log(`Traveling to: ${URL}`)
     return this.http.get<Product>(URL)

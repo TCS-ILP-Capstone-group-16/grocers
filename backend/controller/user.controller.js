@@ -1,15 +1,16 @@
 let userModel = require("../model/user.model");
 
 // get all the user data
-let fetchUserDetails = (req, res) => {
+let fetchUserDetails = (request, response) => {
 
     userModel.find({}, (err, data) => {
-        if(!err){
-            res.json(data);
+        if (!err) {
+            response.json(data);
         } else {
-            res.send("Something Wrong! Please Try Again!")  
+            response.json(err);
         }
-    });
+    })
+
 }
 
 // update all the details to the database
