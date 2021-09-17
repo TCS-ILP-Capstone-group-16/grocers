@@ -12,7 +12,7 @@ let validateEmployee = async (req, res) => {
     // if the employee data is existed, then change whether it is default pw or the changed pw
     if(specificUser != undefined) {
 
-        if(specificUser.Password == "123default") {
+        if(specificUser.Password == "welcome123") {
             res.send("Default Password");
         } else {
             res.send("Suceess");
