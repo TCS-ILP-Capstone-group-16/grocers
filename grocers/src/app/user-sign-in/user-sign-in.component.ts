@@ -27,7 +27,7 @@ export class UserSignInComponent implements OnInit {
     this.userService.checkUserLogin(userLogin).subscribe(result => {
 
       if (result == "Success") {
-        this.router.navigate(["PLACEHOLDERFORCART", userLogin.username]);
+        this.router.navigate(["userHome", userLogin.username]);
       } else {
            this.msg = result;
       }

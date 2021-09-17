@@ -1,14 +1,14 @@
 <div>
-    <form [formGroup]="formRef" (ngSubmit)="submit()">
+    <form method="post" [formGroup]="formRef" (ngSubmit)="submit()">
         <label>Username</label>
         <input type="text" formControlName="username" id="uname"><br/>
         <label>Password </label>
         <input type="password" formControlName="password" id="pname"><br/>
-        <div>{{msg}}</div>
-        <a href="signup">No Account? Sign Up</a>
+        <a href="/signup">No Account? Sign Up</a>
         <button type="submit">Log in</button>
     </form>
+    <div>{{msg}}</div>
     <a href="#">Raise Ticket</a><br/>
-    <a href="#">Employee Login</a><br/>
+    <a href="/employeeSignIn">Employee Login</a><br/>
     <a href="/adminlogin">Admin Login</a>
 </div>
