@@ -8,4 +8,6 @@ let employeeController = require("../controller/employee.controller");
 router.post("/checkLogin", employeeController.validateEmployee);
 router.post("/changePassword", employeeController.changePW);
 
+
+
 module.exports = router;

@@ -16,7 +16,7 @@ export class AddEmployeeComponent implements OnInit {
     lname:new FormControl("",[Validators.required]),
     email:new FormControl("",[Validators.required]),
     password:new FormControl("",[Validators.required]),
-    id:new FormControl("",[Validators.required])
+    username:new FormControl("",[Validators.required])
   })
 
   constructor(public employeeServ:EmployeeService, public router:Router) { }
@@ -27,13 +27,14 @@ export class AddEmployeeComponent implements OnInit {
   submit(){
     let empInfo = this.formRef.value;
     this.employeeServ.addEmployee(empInfo).subscribe(result => {
-      if(result =="Success"){
-        this.router.navigate(["", empInfo.employee]);
+      if(result !="Failed to add."){
+        this.formRef.reset();
+        this.msg = result;
       }
       else{
         this.msg = result;
       }
     }, error=>console.log(error));
-      this.formRef.reset();
+      // this.formRef.reset();
   }
 }
