@@ -32,6 +32,9 @@ import { UserEditProfileComponent } from './user-edit-profile/user-edit-profile.
 import { UserFundsComponent } from './user-funds/user-funds.component';
 import { EmployeeRegisterPasswordComponent } from './employee-register-password/employee-register-password.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { UserhomeComponent } from './userhome/userhome.component';
+import { RaiseticketComponent } from './raiseticket/raiseticket.component';
+import { SelectItemsComponent } from './select-items/select-items.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +63,10 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
     UserEditProfileComponent,
     UserFundsComponent,
     EmployeeRegisterPasswordComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    UserhomeComponent,
+    RaiseticketComponent,
+    SelectItemsComponent,
 
   ],
   imports: [

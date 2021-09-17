@@ -29,12 +29,23 @@ export class UserService {
   config:any = {
     deployed:false,
     URL:'http://localhost:',
-    PORT:'4200',
+    PORT:'9090',
     URL2:'/api'
   }
 
   constructor(public http:HttpClient) { }
 
+
+  getUsers(): Observable<any> {
+    let URL: string
+    if (this.config['deployed']) {
+      URL = this.config['URL2'] + '/api/user/getUserInfo'
+    } else {
+      URL = this.config['URL'] + this.config['PORT'] + '/api/user/getUserInfo'
+    }
+    console.log(`Traveling to: ${URL}`)
+    return this.http.get<Product>(URL)
+  }
 
   checkUserLogin(login: User): Observable<any> {
     return this.http.post("http://localhost:9090/api/user/userSignIn", login,{responseType:'text'});
@@ -202,4 +213,5 @@ export class UserService {
   updateUserBankAmount(account: any, amount: any, id: any):Observable<any> {
     return this.http.put<any>("http://localhost:9090/api/user/changeFunds", {BankAccount: account, BankBalance: amount, userID: id });
   }
+  
 }

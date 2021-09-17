@@ -1,15 +1,27 @@
 let userModel = require("../model/user.model");
 
+let getAllProductDetails = (request, response) => {
+
+    productModel.find({}, (err, data) => {
+        if (!err) {
+            response.json(data);
+        } else {
+            response.json(err);
+        }
+    })
+
+}
 // get all the user data
-let fetchUserDetails = (req, res) => {
+let fetchUserDetails = (request, response) => {
 
     userModel.find({}, (err, data) => {
-        if(!err){
-            res.json(data);
+        if (!err) {
+            response.json(data);
         } else {
-            res.send("Something Wrong! Please Try Again!")  
+            response.json(err);
         }
-    });
+    })
+
 }
 
 // update all the details to the database
@@ -95,4 +107,4 @@ let userSignup = (req, response) => {
         }
     })
 }
-module.exports = { fetchUserDetails, updateBalance, updateProfile, userSignin, userSignup};
+module.exports = { fetchUserDetails, updateBalance, updateProfile, getAllProductDetails, userSignin, userSignup};

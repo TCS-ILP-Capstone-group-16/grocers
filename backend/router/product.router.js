@@ -12,4 +12,6 @@ router.post("/addProduct", productController.addProductInfo);
 router.delete("/deleteProduct/:pid", productController.deleteProductInfo);
 router.put("/updateProduct/:pid", productController.updateProductDetails);
 
+router.get("/getallproducts", productController.getAllProductDetails);
+
 module.exports = router;
