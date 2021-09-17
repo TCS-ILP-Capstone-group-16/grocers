@@ -21,7 +21,22 @@ export class SelectItemsService {
   //  ,"ProductVendor":"ilpgroup16admin"
   //  }
   
+  getProduct(): Observable<any> {
+    let URL: string
+    //should we use api or v1 talk to them
+    if (this.config['deployed']) {
+      URL = this.config['URL2'] + '/api/userhome/select-items'
+    } else {
+      URL = this.config['URL'] + this.config['PORT'] + '/api/userhome/select-items'
+    }
 
+    return this.http.get(URL)
+
+  }
+
+  updateUserProfile():Observable<any>{
+    return this.http.put<any>("http://localhost:9090/api/userhome/select-items",{Email: email, Password: pw, Address: address, PhoneNumber: phone, userID: id });
+  }
 
 
 }

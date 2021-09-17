@@ -4,13 +4,7 @@ mongoose.pluralize(null);
 
 let userSchema = mongoose.Schema({
     
-    userID: { 
-        type: Number,
-        default: function() {
-            return Math.floor(Math.random()*99999 - 10000) + 10000
-          },
-          index: { unique: true }
-    },
+    userID: Number,
     firstName:String,
     lastName:String,
     Username: String,
@@ -19,13 +13,7 @@ let userSchema = mongoose.Schema({
     Address: String,
     DateOfBirth: String,
     PhoneNumber: Number,
-    BankAccount: { 
-        type: Number,
-        default: function() {
-            return Math.floor(Math.random()*99999 - 10000) + 10000
-          },
-          index: { unique: true }
-    },
+    BankAccount: Number,
     BankBalance: Number,
 
 });
@@ -44,5 +32,5 @@ let userProduct = mongoose.Schema({
 });
 
 let userModel = mongoose.model("User", userSchema);
-let userProductModel = mongoose.model("Products", userProduct);
+//let userProductModel = mongoose.model("Products", userProduct);
 module.exports = userModel;

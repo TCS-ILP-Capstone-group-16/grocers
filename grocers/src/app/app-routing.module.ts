@@ -20,6 +20,8 @@ import { UserOrderStatusComponent } from './user-order-status/user-order-status.
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { RaiseticketComponent } from './raiseticket/raiseticket.component';
 import { UserhomeComponent } from './userhome/userhome.component';
+import { Items } from './items';
+import { SelectItemsComponent } from './select-items/select-items.component';
 
 const routes: Routes = [
   { path: '', component: UserSignInComponent },
@@ -35,8 +37,8 @@ const routes: Routes = [
     path: "userhome/:username", component: UserDashboardComponent,
 
     children: [
-      
 
+      { path: ":user/select-items", component: SelectItemsComponent },
       { path: ":user/orderStatus", component: UserOrderStatusComponent },
       { path: ":user/editProfile", component: UserEditProfileComponent },
       { path: ":user/funds", component: UserFundsComponent },

@@ -10,7 +10,7 @@ let userController = require("../controller/user.controller");
 router.get("/getUserInfo", userController.fetchUserDetails);
 router.put("/changeFunds", userController.updateBalance);
 router.put("/editProfile", userController.updateProfile);
-//router.get("/select-items", userController.getAllProductDetails);
+router.get("/select-items", userController.getAllProductDetails);
 router.post("/userSignIn", userController.userSignin);
 router.post("/userSignUp", userController.userSignup);
 

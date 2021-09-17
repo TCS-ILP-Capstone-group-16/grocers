@@ -10,10 +10,14 @@ export class AdminhomeComponent implements OnInit {
 
 
   //to retrieve value from router path we  use activateRoute:Activeroute
-  constructor(public activeRoute:ActivatedRoute) { } //DI
-  userName?:string;
+  constructor(public activeRoute: ActivatedRoute) { } //DI
+  userName?: string;
+
   ngOnInit(): void {
-    this.activeRoute.params.subscribe(data=>this.userName = data.username)
+    this.activeRoute.params.subscribe((data) => {
+    //  console.log("this.activeRoute.params", data)
+      this.userName = data.uname
+    })
   }
 
 
