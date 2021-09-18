@@ -79,7 +79,7 @@ let userSignin = async (request, response) => {
     let user = request.body;
     let userInfo = await userModel.findOne({ Username: user.username, Password: user.password });
     if (userInfo != null) {
-        if(userInfo.Attempts <= "3"){
+        if(userInfo.Attempts < "2"){
             await userModel.updateOne({Username: user.username}, {$set: {Attempts: 0}});
             response.send("Success");
         }
@@ -90,7 +90,7 @@ let userSignin = async (request, response) => {
         let attemptCount = await userModel.findOne({Username:user.username});
         if(attemptCount != null) {
             await userModel.updateOne({Username:user.username}, {$set: {Attempts: attemptCount.Attempts+1}});
-            if(attemptCount.Attempts <= "3")
+            if(attemptCount.Attempts < "2")
                 response.send("Invalid username or password");
             else
                 response.send("Too many wrong attempts. Account locked.");
