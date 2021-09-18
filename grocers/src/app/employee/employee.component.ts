@@ -10,10 +10,10 @@ import { Router } from '@angular/router';
 export class EmployeeComponent implements OnInit {
 
   // Bool flags for subpage toggles
-  clicked_sendReqPage:boolean = false
+  clicked_sendReqPage:boolean = true
   clicked_updateOrderStatus:boolean = false
   clicked_unlockUsers:boolean = false
-  clicked_editProfile:boolean = true
+  clicked_editProfile:boolean = false
   logout_employee:boolean = false
   currentEmployee = sessionStorage.getItem("employee")
 

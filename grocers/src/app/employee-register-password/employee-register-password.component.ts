@@ -33,7 +33,7 @@ export class EmployeeRegisterPasswordComponent implements OnInit {
       if (message == "Registered Done") {
 
         // go to the main page of user 
-        this.router.navigate(["PATH_NAME_OF_DASHBAORD_HERE"]);
+        this.router.navigate(["employeehome"]);
       } else {
         this.result = message;
       }
