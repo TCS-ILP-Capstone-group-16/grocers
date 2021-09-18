@@ -1,0 +1,11 @@
+.card{
+    width: 225px;
+    height: 300px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+button{
+    width: 75px;
+    align-items: center;
+}

@@ -54,9 +54,9 @@ export class OrdersService {
     let username = user_details['id']
     let URL:string
     if(this.config['deployed']){
-      URL = this.config['URL2']+'/v1/orders/getOrderByUser/'+username
+      URL = this.config['URL2']+'/api/orders/getOrderByUser/'+username
     }else{
-      URL = this.config['URL']+this.config['PORT']+'/v1/orders/getOrderByUser/'+username
+      URL = this.config['URL']+this.config['PORT']+'/api/orders/getOrderByUser/'+username
     }
     console.log(`Traveling to: ${URL}`)
     return this.http.get<ServerResponse>(URL)
@@ -67,9 +67,9 @@ export class OrdersService {
     let status = order_details['status']
     let URL:string
     if(this.config['deployed']){
-      URL = this.config['URL2']+'/v1/orders/getOrdersByStatus/'+status
+      URL = this.config['URL2']+'/api/orders/getOrdersByStatus/'+status
     }else{
-      URL = this.config['URL']+this.config['PORT']+'/v1/orders/getOrdersByStatus/'+status
+      URL = this.config['URL']+this.config['PORT']+'/api/orders/getOrdersByStatus/'+status
     }
     console.log(`Traveling to: ${URL}`)
     return this.http.get<ServerResponse>(URL)
@@ -78,9 +78,9 @@ export class OrdersService {
   getDailyOrderReports():Observable<ServerResponse>{
     let URL:string
     if(this.config['deployed']){
-      URL = this.config['URL2']+'/v1/orders/getDailyReports/'
+      URL = this.config['URL2']+'/api/orders/getDailyReports/'
     }else{
-      URL = this.config['URL']+this.config['PORT']+'/v1/orders/getDailyReports/'
+      URL = this.config['URL']+this.config['PORT']+'/api/orders/getDailyReports/'
     }
     console.log(`Traveling to: ${URL}`)
     return this.http.get<ServerResponse>(URL)
@@ -89,9 +89,9 @@ export class OrdersService {
   getWeeklyOrderReports():Observable<ServerResponse>{
     let URL:string
     if(this.config['deployed']){
-      URL = this.config['URL2']+'/v1/orders/getWeeklyReports/'
+      URL = this.config['URL2']+'/api/orders/getWeeklyReports/'
     }else{
-      URL = this.config['URL']+this.config['PORT']+'/v1/orders/getWeeklyReports/'
+      URL = this.config['URL']+this.config['PORT']+'/api/orders/getWeeklyReports/'
     }
     console.log(`Traveling to: ${URL}`)
     return this.http.get<ServerResponse>(URL)
@@ -100,9 +100,9 @@ export class OrdersService {
   getMonthlyOrderReports():Observable<ServerResponse>{
     let URL:string
     if(this.config['deployed']){
-      URL = this.config['URL2']+'/v1/orders/getMonthlyReports/'
+      URL = this.config['URL2']+'/api/orders/getMonthlyReports/'
     }else{
-      URL = this.config['URL']+this.config['PORT']+'/v1/orders/getMonthlyReports/'
+      URL = this.config['URL']+this.config['PORT']+'/api/orders/getMonthlyReports/'
     }
     console.log(`Traveling to: ${URL}`)
     return this.http.get<ServerResponse>(URL)
@@ -112,9 +112,9 @@ export class OrdersService {
     let id = order_details['id']
     let URL:string
     if(this.config['deployed']){
-      URL = this.config['URL2']+'/v1/orders/updateStatus/'+id
+      URL = this.config['URL2']+'/api/orders/updateStatus/'+id
     }else{
-      URL = this.config['URL']+this.config['PORT']+'/v1/orders/updateStatus/'+id
+      URL = this.config['URL']+this.config['PORT']+'/api/orders/updateStatus/'+id
     } 
     console.log(`Traveling to: ${URL}`)
     return this.http.put<ServerResponse>(URL,order_details)

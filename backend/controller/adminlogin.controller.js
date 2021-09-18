@@ -39,7 +39,6 @@ let addEmployee = (req, response) => {
 let deleteEmployee = (request, response) => {
     let empInfo = request.body.id;
 
-    employeeModel.findOne
     employeeModel.findOneAndDelete({empID: empInfo}, (err, result) => {
         if (!err) {
             if(result == null) response.send("Employee does not exist.");

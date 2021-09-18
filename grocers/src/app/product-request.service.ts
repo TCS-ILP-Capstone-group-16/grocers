@@ -22,9 +22,9 @@ export class ProductRequestService {
     let URL:string
     console.log(product_info)
     if(this.config['deployed']){
-      URL = this.config['URL2']+'/v1/productrequest/addRequest'
+      URL = this.config['URL2']+'/api/productrequest/addRequest'
     }else{
-      URL = this.config['URL']+this.config['PORT']+'/v1/productrequest/addRequest'
+      URL = this.config['URL']+this.config['PORT']+'/api/productrequest/addRequest'
     }
     console.log(`Traveling to: ${URL}`)
     return this.http.post<ServerResponse>(URL,product_info)
@@ -33,9 +33,9 @@ export class ProductRequestService {
   makeDeleteRequest(product_info:any):Observable<ServerResponse>{
     let URL:string
     if(this.config['deployed']){
-      URL = this.config['URL2']+'/v1/productrequest/deleteRequest/'+product_info
+      URL = this.config['URL2']+'/api/productrequest/deleteRequest/'+product_info
     }else{
-      URL = this.config['URL']+this.config['PORT']+'/v1/productrequest/deleteRequest/'+product_info
+      URL = this.config['URL']+this.config['PORT']+'/api/productrequest/deleteRequest/'+product_info
     }
     console.log(`Traveling to: ${URL}`)
     return this.http.delete<ServerResponse>(URL)
@@ -44,9 +44,9 @@ export class ProductRequestService {
   getRequest():Observable<Request>{
     let URL:string
     if(this.config['deployed']){
-      URL = this.config['URL2']+'/v1/productrequest/getRequest'
+      URL = this.config['URL2']+'/api/productrequest/getRequest'
     }else{
-      URL = this.config['URL']+this.config['PORT']+'/v1/productrequest/getRequest'
+      URL = this.config['URL']+this.config['PORT']+'/api/productrequest/getRequest'
     }
     console.log(`Traveling to: ${URL}`)
     return this.http.get<Request>(URL)

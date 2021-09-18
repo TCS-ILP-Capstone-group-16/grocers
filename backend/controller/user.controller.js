@@ -1,3 +1,4 @@
+const e = require("express");
 let userModel = require("../model/user.model");
 
 let getAllProductDetails = (request, response) => {
@@ -76,11 +77,27 @@ let updateBalance =  (req, res) => {
 
 let userSignin = async (request, response) => {
     let user = request.body;
-    let userInfo = await userModel.findOne({ username: user.Username, password: user.Password });
+    let userInfo = await userModel.findOne({ Username: user.username, Password: user.password });
     if (userInfo != null) {
-        response.send("Success");
+        if(userInfo.Attempts < "2"){
+            await userModel.updateOne({Username: user.username}, {$set: {Attempts: 0}});
+            console.log(Attempts);
+            response.send("Success");
+        }
+        else{
+            response.send("Account locked.");
+        }
     } else {
-        response.send("Invalid username or password");
+        let attemptCount = await userModel.findOne({Username:user.username});
+        if(attemptCount != null) {
+            await userModel.updateOne({Username:user.username}, {$set: {Attempts: attemptCount.Attempts+1}});
+            if(attemptCount.Attempts < "2")
+                response.send("Invalid username or password");
+            else
+                response.send("Too many wrong attempts. Account locked.");
+        }
+        else
+            response.send("Invalid username or password");
     }
 }
 
@@ -97,6 +114,7 @@ let userSignup = (req, response) => {
         PhoneNumber: req.body.phone,
         BankAccount: req.body.bank,
         BankBalance: "5000",
+        Attempts: "0"
     }
 
     userModel.insertMany(userInfo, (err, result) => {
