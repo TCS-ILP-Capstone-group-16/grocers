@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -35,6 +35,12 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import { UserhomeComponent } from './userhome/userhome.component';
 import { RaiseticketComponent } from './raiseticket/raiseticket.component';
 import { SelectItemsComponent } from './select-items/select-items.component';
+import { DeleteItemsComponent } from './delete-items/delete-items.component';
+import { ViewItemsComponent } from './view-items/view-items.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { SendRequestComponent } from './send-request/send-request.component';
+import { UpdateOrderStatusComponent } from './update-order-status/update-order-status.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +73,12 @@ import { SelectItemsComponent } from './select-items/select-items.component';
     UserhomeComponent,
     RaiseticketComponent,
     SelectItemsComponent,
+    DeleteItemsComponent,
+    ViewItemsComponent,
+    CheckoutComponent,
+    EmployeeComponent,
+    SendRequestComponent,
+    UpdateOrderStatusComponent
 
   ],
   imports: [
@@ -79,6 +91,7 @@ import { SelectItemsComponent } from './select-items/select-items.component';
 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }

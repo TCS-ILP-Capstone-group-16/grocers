@@ -30,9 +30,9 @@ export class EmployeeService {
   sendCredentials(employee:any):Observable<ServerResponse>{
     let URL:string
     if(this.config['deployed']){
-      URL = this.config['URL2']+"/v1/employees/login"
+      URL = this.config['URL2']+"/api/employees/login"
     }else{
-      URL = this.config["URL"]+this.config["PORT"]+"/v1/employees/login"
+      URL = this.config["URL"]+this.config["PORT"]+"/api/employees/login"
     }
     console.log("[LOG]: Going to: " + URL)
     return this.http.post<ServerResponse>(URL,employee)
@@ -43,9 +43,9 @@ export class EmployeeService {
     let emp_id = emp_info['id']
     let URL:string
     if(this.config['deployed']){
-      URL = this.config['URL2']+'/v1/employees/getEmployeeById/'+emp_id
+      URL = this.config['URL2']+'/api/employees/getEmployeeById/'+emp_id
     }else{
-      URL = this.config['URL']+this.config['PORT']+'/v1/employees/getEmployeeById/'+emp_id
+      URL = this.config['URL']+this.config['PORT']+'/api/employees/getEmployeeById/'+emp_id
     }
     console.log(`Traveling to: ${URL}`)
     return this.http.get<ServerResponse>(URL)
@@ -55,9 +55,9 @@ export class EmployeeService {
     let emp_id = password_info['id']
     let URL:string
     if(this.config['deployed']){
-      URL = this.config['URL2']+'/v1/employees/updatepassword/'+emp_id
+      URL = this.config['URL2']+'/api/employees/updatepassword/'+emp_id
     }else{
-      URL = this.config['URL']+this.config['PORT']+'/v1/employees/updatepassword/'+emp_id
+      URL = this.config['URL']+this.config['PORT']+'/api/employees/updatepassword/'+emp_id
     }
     console.log(`Traveling to: ${URL}`)
     return this.http.put<ServerResponse>(URL,password_info)
@@ -65,9 +65,9 @@ export class EmployeeService {
   getEmployee(employee:any):Observable<Employee>{
     let URL:string
     if(this.config['deployed']){
-      URL = this.config['URL2']+"/v1/employees/getemployee/"+employee
+      URL = this.config['URL2']+"/api/employees/getemployee/"+employee
     }else{
-      URL = this.config["URL"]+this.config["PORT"]+"/v1/employees/getemployee/"+employee
+      URL = this.config["URL"]+this.config["PORT"]+"/api/employees/getemployee/"+employee
     }
     console.log("[LOG]: Going to: " + URL)
     return this.http.get<Employee>(URL)
@@ -76,9 +76,9 @@ export class EmployeeService {
   passwordChanged(employee:any, id:any):Observable<ServerResponse>{
     let URL:string
     if(this.config['deployed']){
-      URL = this.config['URL2']+"/v1/employees/updateemployee/"+id
+      URL = this.config['URL2']+"/api/employees/updateemployee/"+id
     }else{
-      URL = this.config["URL"]+this.config["PORT"]+"/v1/employees/updateemployee/"+id
+      URL = this.config["URL"]+this.config["PORT"]+"/api/employees/updateemployee/"+id
     }
     console.log("[LOG]: Going to: " + URL)
     return this.http.put<ServerResponse>(URL,employee)

@@ -1,1 +1,8 @@
-<p>select-items works!</p>
+<div class="row">    
+    <div *ngFor="let product of products">   
+        <div class="card col-sm-15">
+            <div class='card-body'>{{product.productName}}<br/>${{product.price}}</div><button class="btn btn-primary">Select</button>
+            <img class='card-img-bottom' height='200px' src={{product.productImage}} (alt)="product.productDescription">
+        </div>
+    </div>
+</div>

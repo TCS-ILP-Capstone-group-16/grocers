@@ -8,12 +8,13 @@ let userSchema = mongoose.Schema({
     firstName:String,
     lastName:String,
     Username: String,
-    Email: String,
     Password: String,
+    Email: String,
     Address: String,
     PhoneNumber: Number,
     BankAccount: Number,
     BankBalance: Number,
+    Attempts: Number,
 
 });
 

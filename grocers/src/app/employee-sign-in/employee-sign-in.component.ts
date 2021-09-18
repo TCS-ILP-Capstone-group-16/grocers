@@ -34,7 +34,7 @@ export class EmployeeSignInComponent implements OnInit {
 
         // go to the main page of user 
         console.log("good")
-        this.router.navigate(["PATH_NAME_OF_DASHBAORD_HERE"]);
+        this.router.navigate(["employeehome"]);
       }
       if (message == "Default Password") {
         this.router.navigate(["employeeRegisterPW"]);

@@ -22,6 +22,10 @@ import { RaiseticketComponent } from './raiseticket/raiseticket.component';
 import { UserhomeComponent } from './userhome/userhome.component';
 import { Items } from './items';
 import { SelectItemsComponent } from './select-items/select-items.component';
+import { DeleteItemsComponent } from './delete-items/delete-items.component';
+import { ViewItemsComponent } from './view-items/view-items.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { EmployeeComponent } from './employee/employee.component';
 
 const routes: Routes = [
   { path: '', component: UserSignInComponent },
@@ -32,6 +36,7 @@ const routes: Routes = [
 
   { path: "employeeSignIn", component: EmployeeSignInComponent },
   { path: "employeeRegisterPW", component: EmployeeRegisterPasswordComponent },
+  { path: "employeehome", component: EmployeeComponent },
 
   {
     path: "userhome/:username", component: UserDashboardComponent,
@@ -39,6 +44,9 @@ const routes: Routes = [
     children: [
 
       { path: ":user/select-items", component: SelectItemsComponent },
+      { path: ":user/deleteItems", component: DeleteItemsComponent },
+      { path: ":user/viewItems", component: ViewItemsComponent },
+      { path: ":user/checkout", component: CheckoutComponent },
       { path: ":user/orderStatus", component: UserOrderStatusComponent },
       { path: ":user/editProfile", component: UserEditProfileComponent },
       { path: ":user/funds", component: UserFundsComponent },

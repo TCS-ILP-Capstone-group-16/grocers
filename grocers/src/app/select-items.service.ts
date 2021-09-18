@@ -34,9 +34,9 @@ export class SelectItemsService {
 
   }
 
-  updateUserProfile():Observable<any>{
-    return this.http.put<any>("http://localhost:9090/api/userhome/select-items",{Email: email, Password: pw, Address: address, PhoneNumber: phone, userID: id });
-  }
+  // updateUserProfile():Observable<any>{
+  //   return this.http.put<any>("http://localhost:9090/api/userhome/select-items",{Email: email, Password: pw, Address: address, PhoneNumber: phone, userID: id });
+  // }
 
 
 }
