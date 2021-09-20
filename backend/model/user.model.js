@@ -10,6 +10,7 @@ let userSchema = mongoose.Schema({
     Username: String,
     Password: String,
     Email: String,
+    DateOfBirth: String,
     Address: String,
     PhoneNumber: Number,
     BankAccount: Number,
